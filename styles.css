@@ -378,7 +378,7 @@ body.dark .container .flag-details-container .details-container .border-countrie
     /*Details Section Start*/
 
     .container .flag-details-container {
-        padding: 1rem;
+        padding: .5rem;
         margin-top: 3rem;
         display: block;
     }
