@@ -351,11 +351,11 @@ body.dark .container .flag-details-container .details-container .border-countrie
     .container .search-filter-container {
         flex-direction: column;
         align-items: flex-start;
-        row-gap: 3rem;
     }
     
     .container .search-filter-container .search-container {
         width: 100%;
+        margin-bottom: 3rem;
     }
 
     .container .search-filter-container .select-container {
