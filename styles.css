@@ -1,0 +1,402 @@
+@import url('https://fonts.googleapis.com/css2?family=Nunito+Sans:wght@300;600;800&display=swap');
+* {
+    box-sizing: border-box;
+}
+
+body {
+    font-family: "Nunito Sans", "Trebuchet MS";
+    margin: 0;
+    background: hsl(0, 0%, 98%);
+}
+
+/*Dark Mode*/
+body.dark {
+    background: hsl(207, 26%, 17%);
+    color: hsl(0, 0%, 100%);
+}
+
+body.dark .mode-switcher {
+    color: hsl(0, 0%, 100%);
+}
+
+body.dark .header {
+    background: hsl(209, 23%, 22%);
+}
+
+body.dark .container .search-filter-container .search-container {
+    background: hsl(209, 23%, 22%);
+}
+
+body.dark .container .search-filter-container .search-container .search-input {
+    background: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+}
+
+body.dark .container .search-filter-container .region {
+    background: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+}
+
+body.dark .container .search-filter-container .arrow-container {
+    --arrow-color: rgba(255,255,255,.2);
+    background: hsl(207, 26%, 17%);
+}
+
+body.dark .container .flag-container .card .info {
+    background: hsl(209, 23%, 22%);
+}
+
+/*Dark Mode*/
+
+ /*Header Start*/
+.header {
+    height: 10vh;
+    padding: 0 4rem;
+    background: hsl(0, 0%, 100%);
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+
+.header .heading {
+    margin: 0;
+}
+
+.header .mode-container .mode-switcher {
+    background: none;
+    border: none;
+    cursor: pointer;
+    font-size: 16px;
+}
+ /*Header End*/
+
+ /*Core Page Start*/
+.container {
+    min-height: 90vh;
+    padding: 2.5rem 4rem;
+}
+
+.container .search-filter-container {
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .search-filter-container .search-container {
+    width: 30vw;
+    height: 55px;
+    background: hsl(0, 0%, 100%);
+    padding: 0 0 0 1rem;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    transition: box-shadow .4s;
+}
+
+.container .search-filter-container .search-container:focus-within {
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+}
+
+.container .search-filter-container .search-container i {
+    color: hsl(0, 0%, 70%);
+}
+
+.container .search-filter-container .search-container .search-input {
+    flex-grow: 1;
+    height: 100%;
+    font-size: 16px;
+    font-weight: 600;
+    color: gray;
+    padding: 0 1rem;
+    border: none;
+    outline: none;
+}
+
+.container .search-filter-container .select-container {
+    position: relative;
+    border: 2px solid rgba(255,255,255,.1);
+    border-radius: 10px;
+    overflow: hidden;
+}
+
+.container .search-filter-container .select-container select {
+    width: 15vw;
+    font-size: 16px;
+    border: none;
+    background: hsl(0, 0%, 90%);
+    padding: .8rem 0rem .8rem .5rem;
+    cursor: pointer;
+    appearance: none;
+}
+
+.container .search-filter-container .arrow-container {
+    --arrow-color: rgba(0,0,0,0.5);
+    --arrow-size: .65em;
+
+    display: block;
+    width: 3rem;
+    height: 100%;
+    background: hsl(0, 0%, 52%);
+    position: absolute;
+    top: 0;
+    right: 0;
+    pointer-events: none;
+}
+
+.container .search-filter-container .arrow-container::after,
+.container .search-filter-container .arrow-container::before {
+
+    content: "";
+    position: absolute;
+    width: 0;
+    height: 0;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.container .search-filter-container .arrow-container::before {
+    border-left: var(--arrow-size) solid transparent ;
+    border-right: var(--arrow-size)  solid transparent;
+    border-bottom: var(--arrow-size) solid var(--arrow-color);
+
+    top: 30%;
+}
+
+.container .search-filter-container .arrow-container::after {
+    border-left: var(--arrow-size) solid transparent ;
+    border-right: var(--arrow-size) solid transparent;
+    border-top: var(--arrow-size) solid var(--arrow-color);
+
+    top: 70%;
+}
+
+ /*Core Page End*/
+
+.container .flag-container {
+    width: 100%;
+    font-size: 14px ;
+    margin-top: 3rem;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container .flag-container .card {
+    flex-basis: 22%;
+    height: auto;
+    border-radius: 10px;
+    overflow: hidden;
+    margin-bottom: 4rem;
+    box-shadow: 0 0 7px rgba(0,0,0,0.2);
+    cursor: pointer;
+}
+
+.container .flag-container .card .flag {
+    width: 100%;
+    min-height: 225px;
+    max-height: 225px;
+    object-fit: cover;
+}
+
+.container .flag-container .card .info {
+    width: 100%;
+    height: 100%;;
+    background: hsl(0, 0%, 100%);
+    padding: 2rem;
+    margin-top: -7px;
+}
+
+.container .flag-container .card .info .country-name {
+    margin: 0;
+}
+
+.container .flag-container .card .info .label {
+    font-weight: 800;
+}
+
+/*Details Page Styles*/
+/*Back Button Start*/
+.container .back-btn {
+    width: 8rem;
+    font-size: 16px;
+    font-weight: lighter;
+    cursor: pointer;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    background: none;
+}
+
+/*Dark Mode Back Button*/
+body.dark .container .back-btn {
+    color: hsl(0, 0%, 100%);
+    background: hsl(209, 23%, 22%);
+}
+
+.container .back-btn a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    padding: .5rem;
+    text-decoration: none;
+    color: inherit;
+}
+
+.container .back-btn i {
+    margin-top: 1px;
+    margin-right: 10px;
+}
+/*Back Button End*/
+
+
+/*Details Section Start*/
+
+.container .flag-details-container {
+    margin-top: 3rem;
+    display: flex;
+    justify-content: space-between;
+}
+
+.container .flag-details-container div {
+    flex-basis: 47%;
+}
+
+.container .flag-details-container .flag img {
+    display: block;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+}
+
+.container .flag-details-container .details-container {
+    padding: 1rem;
+    font-weight: 600;
+    color: hsl(209, 23%, 22%);
+}
+
+.container .flag-details-container .details-container .more-info {
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+}
+
+.container .flag-details-container .details-container .more-info p {
+    flex-basis: 50%;
+    margin: .65rem auto;
+}
+
+.container .flag-details-container .details-container .more-info p span {
+    font-weight: 300;
+}
+
+.container .flag-details-container .details-container .border-countries {
+    display: flex;
+    align-items: center;
+    column-gap: 1rem;
+    margin-top: 3rem;
+}
+
+.container .flag-details-container .details-container .border-countries .border-container {
+    flex-grow: 1;
+    display: flex;
+    column-gap: 1rem;
+    row-gap: 1rem;
+    flex-wrap: wrap;
+}
+
+.container .flag-details-container .details-container .border-countries .border-container button {
+    padding: .5rem 1rem;
+    background: none;
+    border: 1px solid transparent;
+    border-radius: 10px;
+    box-shadow: 0 0 5px rgba(0,0,0,.2);
+    cursor: pointer;
+}
+
+/*Dark Mode*/
+body.dark .container .flag-details-container .details-container {
+    color: hsl(0, 0%, 100%);
+}
+
+body.dark .container .flag-details-container .details-container .border-countries .border-container button {
+    background: hsl(209, 23%, 22%);
+    color: hsl(0, 0%, 100%);
+}
+
+/*Details Section End*/
+
+/*Mobile View*/
+@media (max-width: 375px) {
+    /*Header Start*/
+    .header {
+        padding: 0 .8rem;
+        display: flex;
+        justify-content: space-between;
+        align-items: center;
+    }
+
+    .header .heading {
+        font-size: 17px;
+    }
+    
+    .header .mode-container .mode-switcher {
+        font-size: 12px;
+    }
+    /*Header End*/
+
+    .container {
+        padding: 2.5rem .8rem;
+    }
+    .container .search-filter-container {
+        flex-direction: column;
+        align-items: flex-start;
+        row-gap: 3rem;
+    }
+    
+    .container .search-filter-container .search-container {
+        width: 100%;
+    }
+
+    .container .search-filter-container .select-container {
+        width: 60%;
+    }
+
+    .container .search-filter-container .select-container select {
+        width: 100%;
+    }
+
+    .container .flag-container {
+        flex-direction: column; 
+        padding: 0 2rem;       
+    }
+
+    .container .flag-container .card {
+        margin-bottom: 2rem;
+    }
+
+    /*Details Section Start*/
+
+    .container .flag-details-container {
+        padding: 1rem;
+        margin-top: 3rem;
+        display: block;
+    }
+
+    .container .flag-details-container .flag {
+        height: 250px;
+    }
+
+    .container .flag-details-container .details-container {
+        padding: 1rem 0;
+    }
+
+    .container .flag-details-container .details-container .more-info {
+        display: block;
+    }
+
+    .container .flag-details-container .details-container .border-countries {
+        display: block;
+    }
+
+}
